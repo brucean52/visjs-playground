@@ -34,13 +34,16 @@ const data = {
 const options = {
   autoResize: true,
   height: '500px',
-  width: '10  0%',
+  width: '50%',
   clickToUse: false,
   configure: {
-    enabled: true,
+    enabled: false,
     filter: 'nodes,edges',
     container: undefined,
     showButton: true
+  },
+  nodes: {
+    shape: 'box'
   },
   edges:{
     color: {
@@ -67,6 +70,19 @@ const options = {
   },
   groups: {
     myGroup: {color:{background:'red'}, borderWidth:3},
+  },
+  manipulation: {
+    enabled: true,
+    initiallyActive: true,
+    addNode: function(nodeData: any,callback: any) {
+      nodeData.label = 'hello world';
+      
+    },
+    addEdge: true,
+    editNode: undefined,
+    editEdge: true,
+    deleteNode: true,
+    deleteEdge: true
   }
 };
 
