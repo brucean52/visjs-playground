@@ -1,25 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
+import { entityFromJSON } from './util/data-conversion';
+import NetworkGraph from './components/network-graph';
+import model1 from './assets/model1'
 import './App.css';
 
+
 const App = () => {
+  console.log('model1', model1);
+  console.log('model convert', entityFromJSON(model1));
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NetworkGraph payload={entityFromJSON(model1)}/>
+    </>
   );
 }
 
